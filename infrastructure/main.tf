@@ -3,6 +3,11 @@ module "rg" {
   resource_group_name     = "harsh-devops-rg"
   resource_group_location = "centralindia"
 }
+module "rg1" {
+  source                  = "../module/azurerm_resource_group"
+  resource_group_name     = "harsh-devops-rg1"
+  resource_group_location = "centralindia"
+}
 module "vnet" {
   depends_on          = [module.rg]
   source              = "../module/azurerm_virtual_network"
